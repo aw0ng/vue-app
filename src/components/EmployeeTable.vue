@@ -5,20 +5,17 @@
         <tr>
           <th>Employee name</th>
           <th>Employee email</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Richard Hendricks</td>
-          <td>richard@piedpiper.com</td>
-        </tr>
-        <tr>
-          <td>Bertram Gilfoyle</td>
-          <td>gilfoyle@piedpiper.com</td>
-        </tr>
-        <tr>
-          <td>Dinesh Chugtai</td>
-          <td>dinesh@piedpiper.com</td>
+        <tr v-for="employee in employees" :key="employee.id">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.email }}</td>
+          <td>
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -34,4 +31,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+button {
+  margin: 0 0.5rem 0 0;
+}
+</style>
